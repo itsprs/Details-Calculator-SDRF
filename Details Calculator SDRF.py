@@ -1,4 +1,4 @@
-import sys, json
+import sys, json, shutil
 
 from PIL import Image, ImageDraw
 from PySide2.QtWidgets import QMainWindow, QApplication, QDialog, QFileDialog
@@ -40,19 +40,105 @@ class App(QMainWindow, Ui_Interface):
         self.pushButton_3.clicked.connect(lambda: self.TW.setCurrentWidget(self.tab_Profile))
         self.pushButton_5.clicked.connect(lambda: self.pushButton_5.setIcon(QIcon(selectAvatar())))
         self.btn_UserDataSave.clicked.connect(self.saveUserData)
+        self.pushButton_7.clicked.connect(self.deleteUserData)
 
     def closeEvent(self, event):
-        pass
+        self.deinitialize()
+        event.accept()
 
     def initialize(self):
         if readData('isMaximized', 'userdata/userdata.json'):
             self.showMaximized()
         self.renderUserData()
 
+        if not QFile.exists('userdata/recent.json'):
+            self.update()
+        else:
+            recentData = readWholeData('userdata/recent.json')
+            lineEdits = [
+                'lineEdit_6', 'lineEdit_7', 'lineEdit_4', 'lineEdit_5',
+                'lineEdit_8', 'lineEdit_9', 'lineEdit_13', 'lineEdit_14',
+                'lineEdit_15', 'lineEdit_16', 'lineEdit_17', 'lineEdit_18',
+                'lineEdit_10', 'lineEdit_11', 'lineEdit_12'
+            ]
+            for key in lineEdits:
+                getattr(self, key).setText(recentData.get(key, ''))
+            self.update()
+
+    def deinitialize(self):
+        writeData('isMaximized', self.isMaximized(), 'userdata/userdata.json')
+
+        lineEdit_keys = [
+            'lineEdit_6', 'lineEdit_7', 'lineEdit_4', 'lineEdit_5',
+            'lineEdit_8', 'lineEdit_9', 'lineEdit_13', 'lineEdit_14',
+            'lineEdit_15', 'lineEdit_16', 'lineEdit_17', 'lineEdit_18',
+            'lineEdit_10', 'lineEdit_11', 'lineEdit_12'
+        ]
+        
+        recentData = {key: getattr(self, key).text() for key in lineEdit_keys}
+        writeWholeData(recentData, 'userdata/recent.json')
+
     # ---
     
     def update(self):
-        pass
+        try:
+            en = all([self.lineEdit_11.text(), self.lineEdit_10.text(), self.lineEdit_12.text()])
+            enLineEdits = [
+                self.lineEdit_6, self.lineEdit_7, self.lineEdit_4, self.lineEdit_5,
+                self.lineEdit_8, self.lineEdit_9, self.lineEdit_13, self.lineEdit_14,
+                self.lineEdit_15, self.lineEdit_16, self.lineEdit_17, self.lineEdit_18
+            ]
+            for line_edit in enLineEdits:
+                line_edit.setEnabled(en)
+            
+            if en:
+                a = (float(self.lineEdit_11.text()) / float(self.lineEdit_10.text())) * float(self.lineEdit_12.text())
+                b = a / 435.52
+                self.label_17.setText(f'{a:.2f}')
+                self.label_19.setText(f'{b:.2f}')
+            else:
+                self.label_17.setText('--')
+                self.label_19.setText('--')
+
+            self.label_29.setText(f'{float(self.lineEdit_4.text()) * b:.2f}' if self.lineEdit_4.text() else '--')
+            self.label_25.setText(f'{float(self.lineEdit_12.text()) * float(self.lineEdit_5.text()):.2f}' if self.lineEdit_5.text() else '--')
+
+            if self.lineEdit_6.text() and self.lineEdit_4.text() and self.lineEdit_5.text():
+                self.label_31.setText(f'{float(self.label_25.text()) + float(self.label_29.text()) + float(self.lineEdit_6.text()):.2f}')
+            else:
+                self.label_31.setText('--')
+
+            if self.lineEdit_7.text() and self.lineEdit_8.text():
+                c = (float(self.lineEdit_8.text()) / 100) * float(self.lineEdit_7.text())
+                self.label_40.setText(f'{c:.2f}')
+            else:
+                self.label_40.setText('--')
+
+            if self.lineEdit_15.text() and self.lineEdit_13.text() and self.lineEdit_7.text() and self.lineEdit_8.text():
+                self.label_43.setText(f'{(c + float(self.lineEdit_15.text())) - float(self.lineEdit_13.text()):.2f}')
+            else:
+                self.label_43.setText('--')
+
+            if self.lineEdit_9.text() and self.lineEdit_7.text():
+                d = (float(self.lineEdit_9.text()) / 100) * float(self.lineEdit_7.text())
+                self.label_48.setText(f'{d:.2f}')
+            else:
+                self.label_48.setText('--')
+
+            if self.lineEdit_16.text() and self.lineEdit_9.text() and self.lineEdit_7.text():
+                self.label_50.setText(f'{d + float(self.lineEdit_16.text()):.2f}')
+            else:
+                self.label_50.setText('--')
+
+            if all([self.lineEdit_15.text(), self.lineEdit_13.text(), self.lineEdit_16.text(), self.lineEdit_14.text(), self.lineEdit_17.text()]):
+                gt = (c + float(self.lineEdit_15.text())) - float(self.lineEdit_13.text()) + d + float(self.lineEdit_16.text()) + float(self.lineEdit_14.text()) + float(self.lineEdit_17.text())
+                self.label_53.setText(f'{gt:.2f}')
+            else:
+                self.label_53.setText('--')    
+
+        except Exception as e:
+            print(e)
+            pass
 
     # ---
 
@@ -70,6 +156,11 @@ class App(QMainWindow, Ui_Interface):
             self.TW.setCurrentWidget(self.tab_Home)
         else:
             self.lineEdit.clear()
+
+    def deleteUserData(self):
+        if QFile.exists('userdata'):
+            shutil.rmtree('userdata')
+            self.restartApplication()
 
     def restartApplication(self):
         QApplication.quit()
@@ -94,7 +185,7 @@ class Startup(QDialog, Ui_Startup):
         self.pushButton_2.clicked.connect(lambda: self.pushButton_2.setIcon(QIcon(selectAvatar())))
 
     def createUser(self):
-        if len(self.lineEdit.text().strip()) > 2:
+        if len(self.lineEdit.text().strip()) > 0:
             avtpath = ''
 
             QDir().mkdir('userdata')

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceoOoaBw.ui'
+## Form generated from reading UI file 'interfaceLKXIKF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -163,7 +163,7 @@ class Ui_Interface(object):
         self.SA1.setWidgetResizable(True)
         self.SAWC1 = QWidget()
         self.SAWC1.setObjectName(u"SAWC1")
-        self.SAWC1.setGeometry(QRect(0, 0, 627, 384))
+        self.SAWC1.setGeometry(QRect(0, -144, 627, 384))
         self.verticalLayout_5 = QVBoxLayout(self.SAWC1)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.frame_3 = QFrame(self.SAWC1)
@@ -181,7 +181,6 @@ class Ui_Interface(object):
 
         self.lineEdit_11 = QLineEdit(self.frame_3)
         self.lineEdit_11.setObjectName(u"lineEdit_11")
-        self.lineEdit_11.setClearButtonEnabled(True)
 
         self.formLayout_2.setWidget(0, QFormLayout.FieldRole, self.lineEdit_11)
 
@@ -192,7 +191,6 @@ class Ui_Interface(object):
 
         self.lineEdit_10 = QLineEdit(self.frame_3)
         self.lineEdit_10.setObjectName(u"lineEdit_10")
-        self.lineEdit_10.setClearButtonEnabled(True)
 
         self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.lineEdit_10)
 
@@ -203,7 +201,6 @@ class Ui_Interface(object):
 
         self.lineEdit_12 = QLineEdit(self.frame_3)
         self.lineEdit_12.setObjectName(u"lineEdit_12")
-        self.lineEdit_12.setClearButtonEnabled(True)
 
         self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.lineEdit_12)
 
@@ -321,7 +318,6 @@ class Ui_Interface(object):
 
         self.lineEdit_4 = QLineEdit(self.groupBox_2)
         self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setClearButtonEnabled(True)
 
         self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.lineEdit_4)
 
@@ -332,7 +328,6 @@ class Ui_Interface(object):
 
         self.lineEdit_5 = QLineEdit(self.groupBox_2)
         self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setClearButtonEnabled(True)
 
         self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.lineEdit_5)
 
@@ -353,7 +348,6 @@ class Ui_Interface(object):
 
         self.lineEdit_8 = QLineEdit(self.groupBox_3)
         self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setClearButtonEnabled(True)
 
         self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.lineEdit_8)
 
@@ -364,7 +358,6 @@ class Ui_Interface(object):
 
         self.lineEdit_9 = QLineEdit(self.groupBox_3)
         self.lineEdit_9.setObjectName(u"lineEdit_9")
-        self.lineEdit_9.setClearButtonEnabled(True)
 
         self.formLayout_5.setWidget(1, QFormLayout.FieldRole, self.lineEdit_9)
 
@@ -383,7 +376,7 @@ class Ui_Interface(object):
         self.SA2.setWidgetResizable(True)
         self.SAWC2 = QWidget()
         self.SAWC2.setObjectName(u"SAWC2")
-        self.SAWC2.setGeometry(QRect(0, 0, 939, 396))
+        self.SAWC2.setGeometry(QRect(0, -268, 939, 396))
         self.verticalLayout_7 = QVBoxLayout(self.SAWC2)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.frame_6 = QFrame(self.SAWC2)
@@ -411,7 +404,6 @@ class Ui_Interface(object):
 
         self.lineEdit_15 = QLineEdit(self.frame_6)
         self.lineEdit_15.setObjectName(u"lineEdit_15")
-        self.lineEdit_15.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.lineEdit_15)
 
@@ -422,7 +414,6 @@ class Ui_Interface(object):
 
         self.lineEdit_13 = QLineEdit(self.frame_6)
         self.lineEdit_13.setObjectName(u"lineEdit_13")
-        self.lineEdit_13.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEdit_13)
 
@@ -453,7 +444,6 @@ class Ui_Interface(object):
 
         self.lineEdit_16 = QLineEdit(self.frame_6)
         self.lineEdit_16.setObjectName(u"lineEdit_16")
-        self.lineEdit_16.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(5, QFormLayout.FieldRole, self.lineEdit_16)
 
@@ -474,7 +464,6 @@ class Ui_Interface(object):
 
         self.lineEdit_14 = QLineEdit(self.frame_6)
         self.lineEdit_14.setObjectName(u"lineEdit_14")
-        self.lineEdit_14.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(7, QFormLayout.FieldRole, self.lineEdit_14)
 
@@ -485,7 +474,6 @@ class Ui_Interface(object):
 
         self.lineEdit_17 = QLineEdit(self.frame_6)
         self.lineEdit_17.setObjectName(u"lineEdit_17")
-        self.lineEdit_17.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(8, QFormLayout.FieldRole, self.lineEdit_17)
 
@@ -506,7 +494,6 @@ class Ui_Interface(object):
 
         self.lineEdit_18 = QLineEdit(self.frame_6)
         self.lineEdit_18.setObjectName(u"lineEdit_18")
-        self.lineEdit_18.setClearButtonEnabled(True)
 
         self.formLayout.setWidget(10, QFormLayout.FieldRole, self.lineEdit_18)
 
@@ -640,7 +627,7 @@ class Ui_Interface(object):
 
         self.retranslateUi(Interface)
 
-        self.TW.setCurrentIndex(1)
+        self.TW.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Interface)
