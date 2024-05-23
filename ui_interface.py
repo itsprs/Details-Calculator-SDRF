@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceqjnVZt.ui'
+## Form generated from reading UI file 'interfaceoOoaBw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -640,7 +640,7 @@ class Ui_Interface(object):
 
         self.retranslateUi(Interface)
 
-        self.TW.setCurrentIndex(0)
+        self.TW.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Interface)
