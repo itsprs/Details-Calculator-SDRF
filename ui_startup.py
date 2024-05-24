@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'startupReHfHX.ui'
+## Form generated from reading UI file 'startupsNHfce.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -24,7 +24,7 @@ class Ui_Startup(object):
         font.setFamily(u"Poppins")
         Startup.setFont(font)
         icon = QIcon()
-        icon.addFile(u"assets/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/icon.ico", QSize(), QIcon.Normal, QIcon.Off)
         Startup.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(Startup)
         self.verticalLayout.setObjectName(u"verticalLayout")

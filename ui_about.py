@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'aboutoVPSqN.ui'
+## Form generated from reading UI file 'aboutSKZJtM.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_About(object):
         About.setMinimumSize(QSize(400, 340))
         About.setMaximumSize(QSize(400, 340))
         icon = QIcon()
-        icon.addFile(u"assets/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/icon.ico", QSize(), QIcon.Normal, QIcon.Off)
         About.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(About)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -37,7 +37,7 @@ class Ui_About(object):
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(50, 50))
         self.label.setMaximumSize(QSize(50, 50))
-        self.label.setPixmap(QPixmap(u"assets/icon.png"))
+        self.label.setPixmap(QPixmap(u"assets/icon.ico"))
         self.label.setScaledContents(True)
 
         self.horizontalLayout.addWidget(self.label)

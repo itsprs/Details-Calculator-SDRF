@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceCyOLtw.ui'
+## Form generated from reading UI file 'interfaceFgZahZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -24,7 +24,7 @@ class Ui_Interface(object):
         font.setPointSize(9)
         Interface.setFont(font)
         icon = QIcon()
-        icon.addFile(u"assets/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"assets/icon.ico", QSize(), QIcon.Normal, QIcon.Off)
         Interface.setWindowIcon(icon)
         self.CW = QWidget(Interface)
         self.CW.setObjectName(u"CW")

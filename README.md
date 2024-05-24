@@ -32,22 +32,6 @@
 - **Operating System**: Windows
 - **Software Requirements**: Ensure you have the necessary libraries and dependencies installed for running a Qt-based application.
 
-### Installation
-
-1. Clone the repository:
-
-   ```sh
-   git clone https://github.com/yourusername/details-calculator-sdrf.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```sh
-   cd details-calculator-sdrf
-   ```
-
-3. Run the application using your preferred method (e.g., through an IDE or command line).
-
 ### Usage
 
 1. Open the application.
