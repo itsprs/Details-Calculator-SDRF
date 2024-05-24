@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceLKXIKF.ui'
+## Form generated from reading UI file 'interfaceCyOLtw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -23,6 +23,9 @@ class Ui_Interface(object):
         font.setFamily(u"Poppins")
         font.setPointSize(9)
         Interface.setFont(font)
+        icon = QIcon()
+        icon.addFile(u"assets/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        Interface.setWindowIcon(icon)
         self.CW = QWidget(Interface)
         self.CW.setObjectName(u"CW")
         self.verticalLayout = QVBoxLayout(self.CW)
@@ -66,9 +69,9 @@ class Ui_Interface(object):
         self.pushButton_3.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_3.setStyleSheet(u"border-radius: 10px;\n"
 "border: 1px solid black;")
-        icon = QIcon()
-        icon.addFile(u"assets/default.webp", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_3.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u"assets/default.webp", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QSize(18, 18))
 
         self.horizontalLayout_6.addWidget(self.pushButton_3)
@@ -98,9 +101,9 @@ class Ui_Interface(object):
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMinimumSize(QSize(30, 30))
         self.pushButton.setMaximumSize(QSize(30, 30))
-        icon1 = QIcon()
-        icon1.addFile(u"assets/icon/add-file.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u"assets/icon/add-file.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon2)
 
         self.horizontalLayout_5.addWidget(self.pushButton)
 
@@ -108,9 +111,9 @@ class Ui_Interface(object):
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setMinimumSize(QSize(30, 30))
         self.pushButton_2.setMaximumSize(QSize(30, 30))
-        icon2 = QIcon()
-        icon2.addFile(u"assets/icon/folder.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_2.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u"assets/icon/folder.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_2.setIcon(icon3)
 
         self.horizontalLayout_5.addWidget(self.pushButton_2)
 
@@ -118,9 +121,9 @@ class Ui_Interface(object):
         self.pushButton_6.setObjectName(u"pushButton_6")
         self.pushButton_6.setMinimumSize(QSize(30, 30))
         self.pushButton_6.setMaximumSize(QSize(30, 30))
-        icon3 = QIcon()
-        icon3.addFile(u"assets/icon/file.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_6.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u"assets/icon/file.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_6.setIcon(icon4)
 
         self.horizontalLayout_5.addWidget(self.pushButton_6)
 
@@ -132,9 +135,9 @@ class Ui_Interface(object):
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setMinimumSize(QSize(30, 30))
         self.pushButton_4.setMaximumSize(QSize(30, 30))
-        icon4 = QIcon()
-        icon4.addFile(u"assets/icon/heart.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_4.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u"assets/icon/heart.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_4.setIcon(icon5)
 
         self.horizontalLayout_5.addWidget(self.pushButton_4)
 
@@ -163,7 +166,7 @@ class Ui_Interface(object):
         self.SA1.setWidgetResizable(True)
         self.SAWC1 = QWidget()
         self.SAWC1.setObjectName(u"SAWC1")
-        self.SAWC1.setGeometry(QRect(0, -144, 627, 384))
+        self.SAWC1.setGeometry(QRect(0, 0, 627, 384))
         self.verticalLayout_5 = QVBoxLayout(self.SAWC1)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.frame_3 = QFrame(self.SAWC1)
@@ -376,7 +379,7 @@ class Ui_Interface(object):
         self.SA2.setWidgetResizable(True)
         self.SAWC2 = QWidget()
         self.SAWC2.setObjectName(u"SAWC2")
-        self.SAWC2.setGeometry(QRect(0, -268, 939, 396))
+        self.SAWC2.setGeometry(QRect(0, 0, 939, 396))
         self.verticalLayout_7 = QVBoxLayout(self.SAWC2)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
         self.frame_6 = QFrame(self.SAWC2)
@@ -527,7 +530,7 @@ class Ui_Interface(object):
         self.pushButton_5.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_5.setStyleSheet(u"border-radius: 25px;\n"
 "border: 2px solid black;")
-        self.pushButton_5.setIcon(icon)
+        self.pushButton_5.setIcon(icon1)
         self.pushButton_5.setIconSize(QSize(48, 48))
 
         self.verticalLayout_8.addWidget(self.pushButton_5)
@@ -570,17 +573,17 @@ class Ui_Interface(object):
         self.pushButton_7.setObjectName(u"pushButton_7")
         self.pushButton_7.setMinimumSize(QSize(110, 0))
         self.pushButton_7.setMaximumSize(QSize(110, 16777215))
-        icon5 = QIcon()
-        icon5.addFile(u"assets/icon/trash.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_7.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u"assets/icon/trash.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_7.setIcon(icon6)
 
         self.horizontalLayout_4.addWidget(self.pushButton_7)
 
         self.btn_UserDataSave = QPushButton(self.frame_8)
         self.btn_UserDataSave.setObjectName(u"btn_UserDataSave")
-        icon6 = QIcon()
-        icon6.addFile(u"assets/icon/tick.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_UserDataSave.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u"assets/icon/tick.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_UserDataSave.setIcon(icon7)
 
         self.horizontalLayout_4.addWidget(self.btn_UserDataSave)
 

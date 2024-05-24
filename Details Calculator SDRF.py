@@ -7,6 +7,7 @@ from PySide2.QtGui import QFontDatabase, QIcon, QDoubleValidator, QRegExpValidat
 
 from ui_interface import Ui_Interface
 from ui_startup import Ui_Startup
+from ui_about import Ui_About
 
 # Details >
 
@@ -16,6 +17,7 @@ class AppDetails:
         self.app_version = "0.0.1"
         self.app_developer = "Pratham Raj Singh"
         self.app_developer_website = "imprs.vercel.app"
+        self.app_description = "Details Calculator SDRF is a desktop application designed to calculate and manage detailed property and financial information related to real estate transactions. It provides a user-friendly interface for inputting and calculating various parameters such as the land area, built-up area, government values, stamp duty, and registration fees."
 
 app_details = AppDetails()
 
@@ -37,6 +39,7 @@ class App(QMainWindow, Ui_Interface):
         for i in [self.lineEdit_11, self.lineEdit_10, self.lineEdit_12, self.lineEdit_6, self.lineEdit_7, self.lineEdit_4, self.lineEdit_5, self.lineEdit_8, self.lineEdit_9, self.lineEdit_13, self.lineEdit_14, self.lineEdit_15, self.lineEdit_16, self.lineEdit_17, self.lineEdit_18]:
             i.textChanged.connect(self.update)
 
+        self.pushButton_4.clicked.connect(self.show_AboutDialog)
         self.pushButton_3.clicked.connect(lambda: self.TW.setCurrentWidget(self.tab_Profile))
         self.pushButton_5.clicked.connect(lambda: self.pushButton_5.setIcon(QIcon(selectAvatar())))
         self.btn_UserDataSave.clicked.connect(self.saveUserData)
@@ -142,6 +145,10 @@ class App(QMainWindow, Ui_Interface):
 
     # ---
 
+    def show_AboutDialog(self):
+        about_dialog = About(self)
+        about_dialog.exec_()
+
     def renderUserData(self):
         userData = readWholeData('userdata/userdata.json')
         self.username_title.setText(userData['name'])
@@ -172,6 +179,16 @@ class App(QMainWindow, Ui_Interface):
         [line_edit.setValidator(QDoubleValidator()) for line_edit in list_le]
 
 # Other UI >
+
+class About(QDialog, Ui_About):
+    def __init__(self, parent=None):
+        super(About, self).__init__(parent)
+        self.setupUi(self)
+        self.setWindowTitle(f'About - {app_details.app_name}')
+        self.label_2.setText(app_details.app_name)
+        self.label_4.setText(app_details.app_description)
+        self.label_8.setText(f'Version: {app_details.app_version}')
+        self.label_5.setText(app_details.app_developer)
 
 class Startup(QDialog, Ui_Startup):
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'startupsVimnY.ui'
+## Form generated from reading UI file 'startupReHfHX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -23,6 +23,9 @@ class Ui_Startup(object):
         font = QFont()
         font.setFamily(u"Poppins")
         Startup.setFont(font)
+        icon = QIcon()
+        icon.addFile(u"assets/icon.png", QSize(), QIcon.Normal, QIcon.Off)
+        Startup.setWindowIcon(icon)
         self.verticalLayout = QVBoxLayout(Startup)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.label = QLabel(Startup)
@@ -63,9 +66,9 @@ class Ui_Startup(object):
         self.pushButton_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet(u"border-radius: 28px;\n"
 "border: 2px solid black;")
-        icon = QIcon()
-        icon.addFile(u"assets/default.webp", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_2.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u"assets/default.webp", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_2.setIcon(icon1)
         self.pushButton_2.setIconSize(QSize(54, 54))
 
         self.horizontalLayout_2.addWidget(self.pushButton_2)
