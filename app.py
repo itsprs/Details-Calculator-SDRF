@@ -1,5 +1,4 @@
-import sys, json, shutil
-
+import sys, os, json, shutil
 from PIL import Image, ImageDraw
 from PySide2.QtWidgets import QMainWindow, QApplication, QDialog, QFileDialog
 from PySide2.QtCore import QFile, QStandardPaths, QProcess, QRegExp, QDir
@@ -50,14 +49,14 @@ class App(QMainWindow, Ui_Interface):
         event.accept()
 
     def initialize(self):
-        if readData('isMaximized', 'userdata/userdata.json'):
+        if readData('isMaximized', 'userdata\\userdata.json'):
             self.showMaximized()
         self.renderUserData()
 
-        if not QFile.exists('userdata/recent.json'):
+        if not QFile.exists(get_user_path('userdata\\recent.json')):
             self.update()
         else:
-            recentData = readWholeData('userdata/recent.json')
+            recentData = readWholeData('userdata\\recent.json')
             lineEdits = [
                 'lineEdit_6', 'lineEdit_7', 'lineEdit_4', 'lineEdit_5',
                 'lineEdit_8', 'lineEdit_9', 'lineEdit_13', 'lineEdit_14',
@@ -69,7 +68,7 @@ class App(QMainWindow, Ui_Interface):
             self.update()
 
     def deinitialize(self):
-        writeData('isMaximized', self.isMaximized(), 'userdata/userdata.json')
+        writeData('isMaximized', self.isMaximized(), 'userdata\\userdata.json')
 
         lineEdit_keys = [
             'lineEdit_6', 'lineEdit_7', 'lineEdit_4', 'lineEdit_5',
@@ -79,7 +78,7 @@ class App(QMainWindow, Ui_Interface):
         ]
         
         recentData = {key: getattr(self, key).text() for key in lineEdit_keys}
-        writeWholeData(recentData, 'userdata/recent.json')
+        writeWholeData(recentData, 'userdata\\recent.json')
 
     # ---
     
@@ -150,7 +149,7 @@ class App(QMainWindow, Ui_Interface):
         about_dialog.exec_()
 
     def renderUserData(self):
-        userData = readWholeData('userdata/userdata.json')
+        userData = readWholeData('userdata\\userdata.json')
         self.username_title.setText(userData['name'])
         self.lineEdit.setText(userData['name'])
         self.pushButton_3.setIcon(QIcon(userData['avatar']))
@@ -158,15 +157,15 @@ class App(QMainWindow, Ui_Interface):
 
     def saveUserData(self):
         if len(self.lineEdit.text().strip()):
-            writeData('name', self.lineEdit.text().strip(), 'userdata/userdata.json')
+            writeData('name', self.lineEdit.text().strip(), 'userdata\\userdata.json')
             self.renderUserData()
             self.TW.setCurrentWidget(self.tab_Home)
         else:
             self.lineEdit.clear()
 
     def deleteUserData(self):
-        if QFile.exists('userdata'):
-            shutil.rmtree('userdata')
+        if QFile.exists(get_user_path('userdata')):
+            shutil.rmtree(get_user_path('userdata'))
             self.restartApplication()
 
     def restartApplication(self):
@@ -205,10 +204,11 @@ class Startup(QDialog, Ui_Startup):
         if len(self.lineEdit.text().strip()) > 0:
             avtpath = ''
 
-            QDir().mkdir('userdata')
-            if QFile.exists('temp.png'):
-                QFile.rename('temp.png', 'userdata/profile.png')
-                avtpath = 'userdata/profile.png'
+            QDir().mkdir(os.path.join(os.path.expanduser("~"), "Details Calculator SDRF"))
+            QDir().mkdir(get_user_path('userdata'))
+            if QFile.exists(get_user_path('temp.png')):
+                QFile.rename(get_user_path('temp.png'), get_user_path('userdata\\profile.png'))
+                avtpath = get_user_path('userdata\\profile.png')
             else:
                 avtpath = 'assets/default.webp'
 
@@ -218,7 +218,7 @@ class Startup(QDialog, Ui_Startup):
                 'avatar': avtpath
             }
 
-            writeWholeData(initialData, 'userdata/userdata.json')
+            writeWholeData(initialData, get_user_path('userdata\\userdata.json'))
             self.close()
             main_app.showApp()
 
@@ -236,11 +236,11 @@ class MainApplication:
         self.window.show()
 
     def start(self):
-        if QFile.exists('userdata'):
+        if QFile.exists(get_user_path('userdata')):
             self.showApp()
         else:
-            if QFile.exists('temp.png'):
-                QFile.remove('temp.png')
+            if QFile.exists(get_user_path('temp.png')):
+                QFile.remove(get_user_path('temp.png'))
             self.window = Startup()
             self.window.show()
         sys.exit(self.app.exec_())
@@ -254,13 +254,14 @@ def selectAvatar():
     file = file_dialog.getOpenFileName(None, 'Select Image', QStandardPaths.writableLocation(QStandardPaths.PicturesLocation), 'Image Files (*.png *.jpg *.jpeg)')[0]
 
     if file:
-        if not QFile.exists('userdata'):
-            cropCircle(file, 'temp.png')
-            return 'temp.png'
+        if not QFile.exists(get_user_path('userdata')):
+            QDir().mkdir(os.path.join(os.path.expanduser("~"), "Details Calculator SDRF"))
+            cropCircle(file, get_user_path('temp.png'))
+            return get_user_path('temp.png')
         else:
-            cropCircle(file, 'userdata/profile.png')
-            writeData('avatar', 'userdata/profile.png', 'userdata/userdata.json')
-            return 'userdata/profile.png'
+            cropCircle(file, get_user_path('userdata\\profile.png'))
+            writeData('avatar', get_user_path('userdata\\profile.png'), get_user_path('userdata\\userdata.json'))
+            return get_user_path('userdata\\profile.png')
     else:
         return 'assets/default.webp'
 
@@ -282,12 +283,15 @@ def cropCircle(image_path, output_path):
 
 # File Handling >
 
+def get_user_path(relative_path):
+    return os.path.join(os.path.expanduser("~"), "Details Calculator SDRF", relative_path)
+
 def readData(key, file):
-    with open(file, 'r') as f:
+    with open(get_user_path(file), 'r') as f:
         return json.load(f).get(key, None)
 
 def writeData(key, value, file):
-    with open(file, 'r+') as f:
+    with open(get_user_path(file), 'r+') as f:
         data = json.load(f)
         data[key] = value
         f.seek(0)
@@ -295,11 +299,11 @@ def writeData(key, value, file):
         f.truncate()
 
 def readWholeData(file):
-    with open(file, 'r') as f:
+    with open(get_user_path(file), 'r') as f:
         return json.load(f)
 
 def writeWholeData(data, file):
-    with open(file, 'w') as f:
+    with open(get_user_path(file), 'w') as f:
         json.dump(data, f, indent=4)
 
 # Main >
