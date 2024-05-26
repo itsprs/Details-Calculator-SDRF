@@ -9,6 +9,8 @@
 - **Stamp Duty and Registration Fees**: Calculate the required stamp duty and registration fees based on the input values.
 - **User Profile Management**: Allows users to save and manage their profiles.
 - **Comprehensive Summary**: Provides a detailed summary of all calculations including net stamp duty, registration fees, and other financial metrics.
+- **Save as PDF**: Save the detailed summary and other information as a PDF document.
+- **Print Feature**: Print the detailed summary and other information directly from the application.
 
 ## Interface Overview
 
@@ -20,6 +22,8 @@
 - **Proportionate Share in Land**: Displays the calculated proportionate share in land.
 - **Government Value**: Fields to input and calculate the government value of the flat, parking, and land share.
 - **Stamp Duty and Registration Fees**: Fields to input the stamp duty and registration fee percentages.
+- **Save as PDF**: Button to save the detailed summary as a PDF.
+- **Print**: Button to print the detailed summary.
 
 ### User Profile
 
@@ -53,7 +57,7 @@ Please follow these steps to contribute:
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/itsprs/Details-Calculator-SDRF/blob/main/LICENSE) for more information.
 
 ## Acknowledgements
 

@@ -1,3 +1,5 @@
+# Creator: Pratham Raj Singh
+
 import sys, os, json, shutil
 from PIL import Image, ImageDraw
 from xhtml2pdf import pisa
@@ -15,7 +17,7 @@ from ui_about import Ui_About
 class AppDetails:
     def __init__(self):
         self.app_name = "Details Calculator SDRF"
-        self.app_version = "1.0.0"
+        self.app_version = "1.1.0"
         self.app_developer = "Pratham Raj Singh"
         self.app_developer_website = "imprs.vercel.app"
         self.app_description = "Details Calculator SDRF is a desktop application designed to calculate and manage detailed property and financial information related to real estate transactions. It provides a user-friendly interface for inputting and calculating various parameters such as the land area, built-up area, government values, stamp duty, and registration fees."
