@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceFgZahZ.ui'
+## Form generated from reading UI file 'interfacegLIkqU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -83,6 +83,17 @@ class Ui_Interface(object):
 
         self.horizontalLayout_6.addWidget(self.username_title)
 
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_4)
+
+        self.lineEdit_19 = QLineEdit(self.frame_10)
+        self.lineEdit_19.setObjectName(u"lineEdit_19")
+        self.lineEdit_19.setMinimumSize(QSize(250, 0))
+        self.lineEdit_19.setMaximumSize(QSize(250, 16777215))
+
+        self.horizontalLayout_6.addWidget(self.lineEdit_19)
+
 
         self.verticalLayout_2.addWidget(self.frame_10)
 
@@ -97,35 +108,25 @@ class Ui_Interface(object):
         self.horizontalLayout_5.setSpacing(5)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.pushButton = QPushButton(self.frame_9)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(30, 30))
-        self.pushButton.setMaximumSize(QSize(30, 30))
-        icon2 = QIcon()
-        icon2.addFile(u"assets/icon/add-file.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon2)
-
-        self.horizontalLayout_5.addWidget(self.pushButton)
-
         self.pushButton_2 = QPushButton(self.frame_9)
         self.pushButton_2.setObjectName(u"pushButton_2")
         self.pushButton_2.setMinimumSize(QSize(30, 30))
         self.pushButton_2.setMaximumSize(QSize(30, 30))
-        icon3 = QIcon()
-        icon3.addFile(u"assets/icon/folder.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_2.setIcon(icon3)
+        icon2 = QIcon()
+        icon2.addFile(u"assets/icon/save.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_2.setIcon(icon2)
 
         self.horizontalLayout_5.addWidget(self.pushButton_2)
 
-        self.pushButton_6 = QPushButton(self.frame_9)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setMinimumSize(QSize(30, 30))
-        self.pushButton_6.setMaximumSize(QSize(30, 30))
-        icon4 = QIcon()
-        icon4.addFile(u"assets/icon/file.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_6.setIcon(icon4)
+        self.pushButton = QPushButton(self.frame_9)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(30, 30))
+        self.pushButton.setMaximumSize(QSize(30, 30))
+        icon3 = QIcon()
+        icon3.addFile(u"assets/icon/print.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon3)
 
-        self.horizontalLayout_5.addWidget(self.pushButton_6)
+        self.horizontalLayout_5.addWidget(self.pushButton)
 
         self.horizontalSpacer_3 = QSpacerItem(837, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -135,9 +136,9 @@ class Ui_Interface(object):
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setMinimumSize(QSize(30, 30))
         self.pushButton_4.setMaximumSize(QSize(30, 30))
-        icon5 = QIcon()
-        icon5.addFile(u"assets/icon/heart.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_4.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u"assets/icon/heart.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_4.setIcon(icon4)
 
         self.horizontalLayout_5.addWidget(self.pushButton_4)
 
@@ -573,17 +574,17 @@ class Ui_Interface(object):
         self.pushButton_7.setObjectName(u"pushButton_7")
         self.pushButton_7.setMinimumSize(QSize(110, 0))
         self.pushButton_7.setMaximumSize(QSize(110, 16777215))
-        icon6 = QIcon()
-        icon6.addFile(u"assets/icon/trash.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_7.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u"assets/icon/trash.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_7.setIcon(icon5)
 
         self.horizontalLayout_4.addWidget(self.pushButton_7)
 
         self.btn_UserDataSave = QPushButton(self.frame_8)
         self.btn_UserDataSave.setObjectName(u"btn_UserDataSave")
-        icon7 = QIcon()
-        icon7.addFile(u"assets/icon/tick.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_UserDataSave.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u"assets/icon/tick.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_UserDataSave.setIcon(icon6)
 
         self.horizontalLayout_4.addWidget(self.btn_UserDataSave)
 
@@ -640,23 +641,18 @@ class Ui_Interface(object):
         Interface.setWindowTitle(QCoreApplication.translate("Interface", u"Details Calculator SDRF", None))
         self.app_name.setText(QCoreApplication.translate("Interface", u"Details Calculator SDRF", None))
         self.username_title.setText(QCoreApplication.translate("Interface", u"User", None))
+        self.lineEdit_19.setPlaceholderText(QCoreApplication.translate("Interface", u"Building Name", None))
 #if QT_CONFIG(tooltip)
-        self.pushButton.setToolTip(QCoreApplication.translate("Interface", u"New", None))
+        self.pushButton_2.setToolTip(QCoreApplication.translate("Interface", u"Save As PDF", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.pushButton.setToolTip(QCoreApplication.translate("Interface", u"Print", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(shortcut)
         self.pushButton.setShortcut(QCoreApplication.translate("Interface", u"Ctrl+N", None))
 #endif // QT_CONFIG(shortcut)
 #if QT_CONFIG(tooltip)
-        self.pushButton_2.setToolTip(QCoreApplication.translate("Interface", u"Open", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(shortcut)
-        self.pushButton_2.setShortcut(QCoreApplication.translate("Interface", u"Ctrl+O", None))
-#endif // QT_CONFIG(shortcut)
-#if QT_CONFIG(tooltip)
-        self.pushButton_6.setToolTip(QCoreApplication.translate("Interface", u"Save", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        self.pushButton_4.setToolTip(QCoreApplication.translate("Interface", u"Info", None))
+        self.pushButton_4.setToolTip(QCoreApplication.translate("Interface", u"About", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(shortcut)
         self.pushButton_4.setShortcut(QCoreApplication.translate("Interface", u"F1", None))
